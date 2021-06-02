@@ -3,11 +3,16 @@ const AdminBroMongoose = require('admin-bro-mongoose');
 
 AdminBro.registerAdapter(AdminBroMongoose);
 
-const { Company } = require('./companies/company.entity');
-
+const {User} =require('./users/user.entity');
+const {Account}=require('./accounts/account.entity');
+const {Rate}=require('./rates/rate.entity');
 /** @type {import('admin-bro').AdminBroOptions} */
 const options = {
-  resources: [Company],
+  resources: [
+    User,
+    Account,
+    Rate,
+  ],
 };
 
 module.exports = options;
